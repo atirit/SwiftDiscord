@@ -21,6 +21,8 @@ import Foundation
 public enum DiscordLogLevel {
     /// Log nothing.
     case none
+    /// Log only errors.
+    case error
     /// Log connecting, disconnecting, events (but not content), etc.
     case info
     /// Log content of events.
@@ -75,6 +77,8 @@ public extension DiscordLogger {
 
     /// Error Messages.
     func error(_ message: @autoclosure () -> String, type: String) {
+        guard level != .none else { return }
+        
         abstractLog("ERROR", message: message(), type: type)
     }
 
