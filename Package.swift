@@ -22,7 +22,7 @@ import PackageDescription
 var deps: [Package.Dependency] = [
     .package(url: "https://github.com/nuclearace/copus", .upToNextMinor(from: "2.0.0")),
     .package(url: "https://github.com/nuclearace/Sodium", .upToNextMinor(from: "2.0.0")),
-    .package(url: "https://github.com/vapor/engine", .upToNextMinor(from: "2.2.0")),
+    .package(url: "https://github.com/vapor/engine", .branch("master")),
 ]
 
 var targetDeps: [Target.Dependency] = ["DiscordOpus", "WebSockets"]
